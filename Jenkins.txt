@@ -17,7 +17,7 @@ pipeline {
         stage('Run Postman Collection') {
             steps {
                 sh '''
-                newman run 16.Opencart_RESTAPI_Cartmodule.postman_collection.json -e QA.postman_environment.json \
+                newman run Opencart_RESTAPI_Cartmodule.json -e postman_environment.json \
                 --reporters cli,junit --reporter-junit-export results.xml
                 '''
             }
