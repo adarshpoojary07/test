@@ -4,12 +4,25 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/Adsrshpoojary07/test'
+                git branch: 'main', url: 'https://github.com/Adsrshpoojary07'
             }
         }
-        stage('Run Postman Tests') {
+
+        stage('Install Newman') {
             steps {
-                sh 'newman run 8.API_Chaining.json -e postman_environment.json -r htmlextra'
+                sh 'npm install -g newman'
+            }
+        }
+
+        stage('Run Postman Collection') {
+            steps {
+                sh 'newman run 8.API_Chaining.json -e postman_environment.json --reporters cli,junit --reporter-junit-export results.xml'
+            }
+        }
+
+        stage('Publish Test Results') {
+            steps {
+                junit 'results.xml'
             }
         }
     }
