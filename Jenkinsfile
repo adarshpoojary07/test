@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Adsrshpoojary07'
+                git branch: 'main', url: 'https://github.com/Adsrshpoojary07/test'
             }
         }
 
@@ -17,7 +17,7 @@ pipeline {
         stage('Run Postman Collection') {
             steps {
                 sh '''
-                newman run API_Chaining_with_token.json -e postman_environment.json \
+                newman run 8.API_Chaining.json -e postman_environment.json \
                 --reporters cli,junit --reporter-junit-export results.xml
                 '''
             }
