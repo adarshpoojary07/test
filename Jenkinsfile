@@ -17,8 +17,7 @@ pipeline {
         stage('Run Postman Collection') {
             steps {
                 sh '''
-                newman run 8.API_Chaining.json -e postman_environment.json \
-                --reporters cli,junit --reporter-junit-export results.xml
+                newman run 8.API_Chaining.json -e postman_environment.json -r htmlextra
                 '''
             }
         }
