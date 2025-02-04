@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Adsrshpoojary07/test'
             }
         }
 
-        stage('Install Newman') {
+        stage('Install Dependencies') {
             steps {
                 sh 'npm install -g newman'
             }
@@ -16,14 +16,20 @@ pipeline {
 
         stage('Run Postman Collection') {
             steps {
-                sh 'newman run 8.API_Chaining.json -e postman_environment.json --reporters cli,junit --reporter-junit-export results.xml'
+                sh 'newman run 8.API_Chaining.json -e postman_environment.json'
             }
         }
+    }
 
-        stage('Publish Test Results') {
-            steps {
-                junit 'results.xml'
-            }
+    post {
+        always {
+            echo 'Pipeline completed.'
+        }
+        success {
+            echo 'Postman collection tests passed!'
+        }
+        failure {
+            echo 'Postman collection tests failed!'
         }
     }
 }
