@@ -13,7 +13,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"/*var jsonDaata=pm.response.json();\r",
+							"/*var jsonData=pm.response.json();\r",
 							"pm.environment.set(\"id\",jsonData.id);//Capturing the id from response,this id is used in other request(GET,PUT,DELETE)\r",
 							"*/\r",
 							"\r",
@@ -54,7 +54,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"{{name}}\",\r\n    \"gender\":\"Male\",\r\n    \"email\":\"{{email}}\",\r\n    \"status\":\"active\"\r\n}",
+					"raw": "{\r\n    \"name\":\"{{nam}}\",\r\n    \"gender\":\"Male\",\r\n    \"email\":\"{{email}}\",\r\n    \"status\":\"active\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
