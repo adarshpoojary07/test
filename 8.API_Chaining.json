@@ -54,7 +54,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"{{nam}}\",\r\n    \"gender\":\"Male\",\r\n    \"email\":\"{{email}}\",\r\n    \"status\":\"active\"\r\n}",
+					"raw": "{\r\n    \"name\":\"{{name}}\",\r\n    \"gender\":\"Male\",\r\n    \"email\":\"{{email}}\",\r\n    \"status\":\"active\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
