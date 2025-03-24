@@ -13,7 +13,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"/*var jsonData=pm.response.json();\r",
+							"/*var jsonata=pm.response.json();\r",
 							"pm.environment.set(\"id\",jsonData.id);//Capturing the id from response,this id is used in other request(GET,PUT,DELETE)\r",
 							"*/\r",
 							"\r",
